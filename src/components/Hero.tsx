@@ -2,10 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, FileDown, Twitter } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  // Typewriter for name
+  const names = ["Ogboi", "Vincent"];
+  const [currentNameIndex, setCurrentNameIndex] = useState(0);
+  const [displayedName, setDisplayedName] = useState('');
+  const [isDeletingName, setIsDeletingName] = useState(false);
+
+  // Typewriter for roles
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   const roles = [
     'Data Scientist',
     'Machine Learning Engineer',
@@ -14,6 +21,29 @@ const Hero: React.FC = () => {
     'Instructor'
   ];
 
+  // Typewriter effect for name
+  useEffect(() => {
+    const currentName = names[currentNameIndex];
+    const typingSpeed = isDeletingName ? 50 : 100;
+    const pauseTime = isDeletingName ? 500 : 2000;
+
+    const timer = setTimeout(() => {
+      if (!isDeletingName && displayedName === currentName) {
+        setTimeout(() => setIsDeletingName(true), pauseTime);
+      } else if (isDeletingName && displayedName === '') {
+        setIsDeletingName(false);
+        setCurrentNameIndex((prev) => (prev + 1) % names.length);
+      } else if (isDeletingName) {
+        setDisplayedName(currentName.substring(0, displayedName.length - 1));
+      } else {
+        setDisplayedName(currentName.substring(0, displayedName.length + 1));
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [currentNameIndex, displayedName, isDeletingName, names]);
+
+  // Typewriter effect for roles
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
     const typingSpeed = isDeleting ? 50 : 100;
@@ -53,8 +83,9 @@ const Hero: React.FC = () => {
           {/* Content */}
           <div className="text-center lg:text-left">
 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Ogboi <span className="text-purple-600 dark:text-purple-400">Favour</span>
-            </h1>
+  {displayedName} <span className="text-purple-600 dark:text-purple-400">Favour</span>
+  <span className="animate-pulse ml-1 text-purple-600 dark:text-purple-400">|</span>
+</h1>
             
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-purple-600 dark:text-purple-400 mb-6 h-12 flex items-center">
               <span>{displayedText}</span>
