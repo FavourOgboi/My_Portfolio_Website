@@ -52,8 +52,8 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Vincent <span className="text-purple-600 dark:text-purple-400">Favour</span>
+<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+              Ogboi <span className="text-purple-600 dark:text-purple-400">Favour</span>
             </h1>
             
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-purple-600 dark:text-purple-400 mb-6 h-12 flex items-center">
