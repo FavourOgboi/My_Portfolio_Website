@@ -13,7 +13,7 @@ const About: React.FC = () => {
       icon: Award,
       title: 'Certified Professional',
       subtitle: 'Data Science & Analytics',
-      description: 'Multiple industry certifications in ML, Python, and statistical analysis'
+      description: 'Multiple industry certifications in DL, ML, Python, and statistical analysis'
     },
     {
       icon: Users,
@@ -46,7 +46,7 @@ const About: React.FC = () => {
           <div>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
               I am a graduate with a First Class B.Sc. in Computer Science from the Federal University of Petroleum
-              Resources, Effurun, and currently serve as the Chapter Lead for Data Science Nigeria (DSN) at FUPRE.
+              Resources, Effurun, where I served as the Chapter Lead for Data Science Nigeria (DSN) at FUPRE.
               My interests and experience lie in applying data science and machine learning to real-world problems.
             </p>
             
