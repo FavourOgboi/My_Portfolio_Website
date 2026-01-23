@@ -110,7 +110,7 @@ const Hero: React.FC = () => {
                 <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-800">
                   <img
                     src="/pres.jpg"
-                    alt="Vincent Favour"
+alt="Ogboi Favour"
                     className="w-full h-full object-cover"
                   />
                 </div>
