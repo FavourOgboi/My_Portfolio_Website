@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Filter } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');

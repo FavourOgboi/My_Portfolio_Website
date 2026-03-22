@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Technologies: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);

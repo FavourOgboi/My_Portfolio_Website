@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, FileDown, Twitter } from 'lucide-react';
 
+const NAMES = ['Ogboi', 'Vincent'] as const;
+const ROLES = [
+  'Data Scientist',
+  'Machine Learning Engineer',
+  'Python Developer',
+  'AI Engineer',
+  'Instructor',
+] as const;
+
 const Hero: React.FC = () => {
   // Typewriter for name
-  const names = ["Ogboi", "Vincent"];
   const [currentNameIndex, setCurrentNameIndex] = useState(0);
   const [displayedName, setDisplayedName] = useState('');
   const [isDeletingName, setIsDeletingName] = useState(false);
@@ -13,17 +21,9 @@ const Hero: React.FC = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const roles = [
-    'Data Scientist',
-    'Machine Learning Engineer',
-    'Python Developer',
-    'AI Engineer',
-    'Instructor'
-  ];
-
   // Typewriter effect for name
   useEffect(() => {
-    const currentName = names[currentNameIndex];
+    const currentName = NAMES[currentNameIndex];
     const typingSpeed = isDeletingName ? 50 : 100;
     const pauseTime = isDeletingName ? 500 : 2000;
 
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
         setTimeout(() => setIsDeletingName(true), pauseTime);
       } else if (isDeletingName && displayedName === '') {
         setIsDeletingName(false);
-        setCurrentNameIndex((prev) => (prev + 1) % names.length);
+        setCurrentNameIndex((prev) => (prev + 1) % NAMES.length);
       } else if (isDeletingName) {
         setDisplayedName(currentName.substring(0, displayedName.length - 1));
       } else {
@@ -41,11 +41,11 @@ const Hero: React.FC = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [currentNameIndex, displayedName, isDeletingName, names]);
+  }, [currentNameIndex, displayedName, isDeletingName]);
 
   // Typewriter effect for roles
   useEffect(() => {
-    const currentRole = roles[currentRoleIndex];
+    const currentRole = ROLES[currentRoleIndex];
     const typingSpeed = isDeleting ? 50 : 100;
     const pauseTime = isDeleting ? 500 : 2000;
 
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
       } else if (isDeleting && displayedText === '') {
         // Move to next role
         setIsDeleting(false);
-        setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        setCurrentRoleIndex((prev) => (prev + 1) % ROLES.length);
       } else if (isDeleting) {
         // Delete character
         setDisplayedText(currentRole.substring(0, displayedText.length - 1));
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [currentRoleIndex, displayedText, isDeleting, roles]);
+  }, [currentRoleIndex, displayedText, isDeleting]);
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/FavourOgboi', label: 'GitHub' },
