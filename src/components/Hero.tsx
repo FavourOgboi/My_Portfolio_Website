@@ -140,7 +140,7 @@ const Hero: React.FC = () => {
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-600 to-teal-500 p-1">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-800">
                   <img
-                    src="/pres.jpg"
+                    src="/image.png"
 alt="Ogboi Favour"
                     className="w-full h-full object-cover"
                   />
