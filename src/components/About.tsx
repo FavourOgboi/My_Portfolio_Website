@@ -42,8 +42,17 @@ const About: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Story */}
+          {/* Image & Story */}
           <div>
+            {/* Profile Image */}
+            <div className="mb-8">
+              <img 
+                src="/image.png" 
+                alt="Vincent Favour - Profile" 
+                className="w-48 h-48 mx-auto lg:mx-0 rounded-full object-cover shadow-xl border-4 border-purple-600 dark:border-purple-400"
+              />
+            </div>
+            
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
               I am a graduate with a First Class B.Sc. in Computer Science from the Federal University of Petroleum
               Resources, Effurun, where I served as the Chapter Lead for Data Science Nigeria (DSN) at FUPRE.
