@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, FileDown, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import PrivateLink from './PrivateLink';
+
+const profileImageSrc = `${import.meta.env.BASE_URL}image.png`;
 
 const NAMES = ['Ogboi', 'Vincent'] as const;
 const ROLES = [
@@ -77,57 +80,60 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-16">
+    <section className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-  {displayedName} <span className="text-purple-600 dark:text-purple-400">Favour</span>
-  <span className="animate-pulse ml-1 text-purple-600 dark:text-purple-400">|</span>
-</h1>
+            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-700 px-3 py-1.5 mb-6">
+              <span className="w-1.5 h-1.5 bg-accent-500" />
+              AI Engineer · Machine Learning · Computer Vision · NLP
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+              {displayedName} <span className="text-accent-500">Favour</span>
+              <span className="animate-pulse ml-1 text-accent-500">|</span>
+            </h1>
             
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-purple-600 dark:text-purple-400 mb-6 h-12 flex items-center">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-accent-500 mb-6 h-12 flex items-center font-mono">
               <span>{displayedText}</span>
-              <span className="animate-pulse ml-1 text-purple-600 dark:text-purple-400">|</span>
+              <span className="animate-pulse ml-1 text-accent-500">|</span>
             </h2>
             
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl leading-relaxed">
-              Building intelligent systems that transform raw data into actionable insights. 
-              Specialized in machine learning, statistical analysis, and data-driven decision making.
+              First-Class CS graduate building AI systems in production — from robotics perception at
+              Aurora Robotics to maternal triage platforms and corrosion prediction research. I work where
+              data meets real-world complexity.
             </p>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6 mb-8">
+            <div className="flex justify-center lg:justify-start space-x-3 mb-8">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   target={social.href.startsWith('http') ? '_blank' : '_self'}
                   rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-110 group"
+                  className="p-3 border border-gray-300 dark:border-gray-700 hover:border-accent-500 transition-colors duration-200 group"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200" />
+                  <social.icon className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-accent-500 transition-colors duration-200" />
                 </a>
               ))}
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href="https://drive.google.com/file/d/1ro0NdPtpezA2WmXQax3dhoelcEFWkzPy/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-full font-medium transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2"
-              >
-                <FileDown className="w-5 h-5" />
-                View Resume
-              </a>
+              <PrivateLink
+                name="Resume"
+                label="Resume Access"
+                location="Google Drive resume link"
+                reason="The resume is hosted on Google Drive with restricted access, so visitors need to request permission before viewing it."
+              />
               
               <button
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-400 hover:bg-purple-600 hover:text-white dark:hover:bg-purple-400 dark:hover:text-gray-900 px-8 py-4 rounded-full font-medium transition-all duration-200 hover:scale-105"
+                className="border-2 border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white px-8 py-4 font-mono text-sm uppercase tracking-wide transition-colors duration-200"
               >
                 View My Work
               </button>
@@ -136,24 +142,20 @@ const Hero: React.FC = () => {
 
           {/* Profile Image */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-600 to-teal-500 p-1">
-                <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-800">
-                  <img
-                    src="/image.png"
-alt="Ogboi Favour"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            <div className="w-full max-w-sm border-2 border-accent-500">
+              <div className="w-full aspect-square overflow-hidden bg-white dark:bg-gray-800">
+                <img
+                  src={profileImageSrc}
+                  alt="Ogboi Favour"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                <span className="text-white font-bold text-lg">ML</span>
-              </div>
-              
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                <span className="text-white font-bold">AI</span>
+              <div className="flex items-center justify-between border-t-2 border-accent-500 px-4 py-3 font-mono text-xs uppercase tracking-wide text-gray-600 dark:text-gray-300">
+                <span>Ogboi Favour Ifeanyichukwu</span>
+                <span className="flex gap-2">
+                  <span className="text-accent-500">AI</span>
+                  <span className="text-accent-500">ML</span>
+                </span>
               </div>
             </div>
           </div>

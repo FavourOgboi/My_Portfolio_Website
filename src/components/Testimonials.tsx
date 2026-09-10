@@ -128,16 +128,16 @@ const Testimonials: React.FC = () => {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white dark:bg-gray-800 p-1 rounded-full shadow-lg">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-1 inline-flex">
             <button
               onClick={() => {
                 setActiveTab('teaching');
                 setCurrentIndex(0);
               }}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-wide transition-colors duration-200 ${
                 activeTab === 'teaching'
-                  ? 'bg-purple-600 text-white shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'
+                  ? 'bg-accent-500 text-white'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-accent-500'
               }`}
             >
               <GraduationCap className="w-4 h-4" />
@@ -148,10 +148,10 @@ const Testimonials: React.FC = () => {
                 setActiveTab('projects');
                 setCurrentIndex(0);
               }}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-wide transition-colors duration-200 ${
                 activeTab === 'projects'
-                  ? 'bg-purple-600 text-white shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'
+                  ? 'bg-accent-500 text-white'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-accent-500'
               }`}
             >
               <Briefcase className="w-4 h-4" />
@@ -162,9 +162,9 @@ const Testimonials: React.FC = () => {
 
         {/* Testimonial Carousel */}
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 md:p-12">
             <div className="flex items-center justify-center mb-8">
-              <Quote className="w-12 h-12 text-purple-600 dark:text-purple-400" />
+              <Quote className="w-12 h-12 text-accent-500" />
             </div>
 
             <div className="text-center">
@@ -173,14 +173,14 @@ const Testimonials: React.FC = () => {
               </p>
 
               <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-teal-500 flex items-center justify-center border-4 border-purple-100 dark:border-purple-900">
+                <div className="w-16 h-16 border border-accent-500 flex items-center justify-center bg-gray-100 dark:bg-gray-900">
                   <User className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-left">
                   <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
                     {currentTestimonials[currentIndex].name}
                   </h4>
-                  <p className="text-purple-600 dark:text-purple-400 font-medium">
+                  <p className="text-accent-500 font-medium">
                     {currentTestimonials[currentIndex].role}
                   </p>
                 </div>
@@ -195,14 +195,14 @@ const Testimonials: React.FC = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-200 hover:scale-110"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:border-accent-500 transition-colors duration-200"
           >
             <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
           </button>
           
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-200 hover:scale-110"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:border-accent-500 transition-colors duration-200"
           >
             <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
           </button>
@@ -214,9 +214,9 @@ const Testimonials: React.FC = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${
+              className={`w-3 h-3 transition-all duration-200 ${
                 index === currentIndex
-                  ? 'bg-purple-600 dark:bg-purple-400'
+                  ? 'bg-accent-500'
                   : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
               }`}
             />
@@ -233,17 +233,17 @@ const Testimonials: React.FC = () => {
             {currentTestimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="bg-white dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 hover:border-accent-500 transition-colors duration-200"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-teal-500 flex items-center justify-center">
-                    <User className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 border border-accent-500 bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
+                    <User className="w-6 h-6 text-accent-500" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-purple-600 dark:text-purple-400">
+                    <p className="text-sm text-accent-500">
                       {testimonial.role}
                     </p>
                   </div>

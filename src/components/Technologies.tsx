@@ -191,7 +191,7 @@ const Technologies: React.FC = () => {
             {technologies.map((tech, index) => (
               <span
                 key={index}
-                className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-200 cursor-default"
+                className="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 text-sm font-mono hover:border-accent-500 hover:text-accent-500 transition-colors duration-200 cursor-default"
               >
                 {tech}
               </span>
@@ -226,23 +226,23 @@ const Technologies: React.FC = () => {
               {certifications.map((cert, index) => (
                 <div
                   key={`first-${index}`}
-                  className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl shadow-lg flex-shrink-0 w-80 mx-3"
+                  className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 flex-shrink-0 w-80 mx-3 hover:border-accent-500 transition-colors duration-200"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
                       {cert.title}
                     </h3>
-                    <span className="text-xl font-bold text-purple-600 dark:text-purple-400 ml-2">
+                    <span className="text-xl font-bold text-accent-500 ml-2">
                       {cert.year}
                     </span>
                   </div>
                   
-                  <p className="text-teal-600 dark:text-teal-400 font-medium mb-2">
+                  <p className="font-mono text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
                     {cert.issuer}
                   </p>
                   
                   <div className="flex items-center justify-between mb-3">
-                    <span className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="inline-block border border-accent-500/40 text-accent-500 px-3 py-1 text-xs font-mono uppercase tracking-wide">
                       {cert.level}
                     </span>
                     {cert.link && (
@@ -250,7 +250,7 @@ const Technologies: React.FC = () => {
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 text-sm font-medium"
+                        className="text-accent-500 hover:text-accent-600 text-sm font-medium"
                       >
                         View Certificate
                       </a>
@@ -268,7 +268,7 @@ const Technologies: React.FC = () => {
                       {cert.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-300 px-2 py-1 rounded text-xs"
+                          className="bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 text-xs font-mono"
                         >
                           {skill}
                         </span>
@@ -282,23 +282,23 @@ const Technologies: React.FC = () => {
               {certifications.map((cert, index) => (
                 <div
                   key={`second-${index}`}
-                  className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl shadow-lg flex-shrink-0 w-80 mx-3 pointer-events-auto"
+                  className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 flex-shrink-0 w-80 mx-3 pointer-events-auto hover:border-accent-500 transition-colors duration-200"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
                       {cert.title}
                     </h3>
-                    <span className="text-xl font-bold text-purple-600 dark:text-purple-400 ml-2">
+                    <span className="text-xl font-bold text-accent-500 ml-2">
                       {cert.year}
                     </span>
                   </div>
                   
-                  <p className="text-teal-600 dark:text-teal-400 font-medium mb-2">
+                  <p className="font-mono text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
                     {cert.issuer}
                   </p>
                   
                   <div className="flex items-center justify-between mb-3">
-                    <span className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="inline-block border border-accent-500/40 text-accent-500 px-3 py-1 text-xs font-mono uppercase tracking-wide">
                       {cert.level}
                     </span>
                     {cert.link && (
@@ -306,7 +306,7 @@ const Technologies: React.FC = () => {
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 text-sm font-medium"
+                        className="text-accent-500 hover:text-accent-600 text-sm font-medium"
                       >
                         View Certificate
                       </a>
@@ -324,7 +324,7 @@ const Technologies: React.FC = () => {
                       {cert.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-300 px-2 py-1 rounded text-xs"
+                          className="bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 text-xs font-mono"
                         >
                           {skill}
                         </span>

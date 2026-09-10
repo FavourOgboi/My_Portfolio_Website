@@ -93,17 +93,17 @@ const Articles: React.FC = () => {
           {articles.map((article, index) => (
             <article
               key={index}
-              className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 overflow-hidden group hover:border-accent-500 transition-colors duration-200"
             >
               {/* Article Image */}
               <div className="relative overflow-hidden">
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-48 object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-medium bg-black bg-opacity-50 px-4 py-2 rounded-full">
+                  <span className="text-white font-mono text-xs uppercase tracking-wide bg-black/70 px-4 py-2">
                     Read Article
                   </span>
                 </div>
@@ -124,7 +124,7 @@ const Articles: React.FC = () => {
                 </div>
 
                 {/* Article Title */}
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors duration-200">
                   {article.title}
                 </h3>
 
@@ -138,7 +138,7 @@ const Articles: React.FC = () => {
                   {article.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="bg-gray-200 dark:bg-gray-600 text-purple-600 dark:text-purple-400 px-2 py-1 rounded text-xs font-medium"
+                      className="bg-gray-200 dark:bg-gray-800 text-accent-500 px-2 py-1 text-xs font-mono"
                     >
                       {tag}
                     </span>
@@ -150,7 +150,7 @@ const Articles: React.FC = () => {
                   href={article.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm group-hover:translate-x-1 transition-transform duration-200"
+                  className="inline-flex items-center text-accent-500 hover:text-accent-600 font-medium text-sm group-hover:translate-x-1 transition-transform duration-200"
                 >
                   Read More
                   <ArrowRight className="w-4 h-4 ml-1" />
@@ -166,7 +166,7 @@ const Articles: React.FC = () => {
             href="https://vincentfavour.medium.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-full font-medium transition-all duration-200 hover:scale-105 flex items-center mx-auto gap-2 w-fit"
+            className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 font-mono text-sm uppercase tracking-wide transition-colors duration-200 flex items-center mx-auto gap-2 w-fit"
           >
             <BookOpen className="w-5 h-5" />
             View All Articles on Medium
@@ -174,7 +174,7 @@ const Articles: React.FC = () => {
         </div>
 
         {/* Additional Articles List */}
-        <div className="mt-16 bg-gray-100 dark:bg-gray-700 rounded-xl p-8">
+        <div className="mt-16 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-8">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
             More Articles & Insights
           </h3>
@@ -185,9 +185,9 @@ const Articles: React.FC = () => {
                 href="https://vincentfavour.medium.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                className="block p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group hover:border-accent-500 transition-colors duration-200"
               >
-                <h4 className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200">
+                <h4 className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent-500 transition-colors duration-200">
                   {title}
                 </h4>
               </a>

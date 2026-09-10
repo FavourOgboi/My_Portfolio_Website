@@ -6,8 +6,21 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
+        accent: {
+          50: '#eef0fd',
+          100: '#dde1fb',
+          200: '#b8c0f7',
+          300: '#8f9cf2',
+          400: '#7381f4',
+          500: '#5b6af0',
+          600: '#4854c9',
+          700: '#3941a0',
+          800: '#2b3178',
+          900: '#1e2254',
+        },
         purple: {
           50: '#faf5ff',
           100: '#f3e8ff',

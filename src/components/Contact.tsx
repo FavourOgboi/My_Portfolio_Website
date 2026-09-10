@@ -71,9 +71,9 @@ const Contact: React.FC = () => {
             
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
-                    <info.icon className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                <div key={index} className="flex items-center border border-gray-200 dark:border-gray-700 p-4 hover:border-accent-500 transition-colors duration-200">
+                  <div className="flex-shrink-0 w-12 h-12 border border-accent-500 flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+                    <info.icon className="w-6 h-6 text-accent-500" />
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
                     </h4>
                     <a
                       href={info.link}
-                      className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200"
+                      className="text-gray-600 dark:text-gray-300 hover:text-accent-500 transition-colors duration-200"
                     >
                       {info.value}
                     </a>
@@ -102,10 +102,10 @@ const Contact: React.FC = () => {
                     href={social.href}
                     target={social.href.startsWith('http') ? '_blank' : '_self'}
                     rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="w-12 h-12 bg-white dark:bg-gray-800 rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-all duration-200 hover:scale-110 group"
+                    className="w-12 h-12 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:border-accent-500 transition-colors duration-200 group"
                     aria-label={social.label}
                   >
-                    <social.icon className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200" />
+                    <social.icon className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-accent-500 transition-colors duration-200" />
                   </a>
                 ))}
               </div>
@@ -113,7 +113,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+          <div className="bg-white dark:bg-gray-800 p-8 border border-gray-200 dark:border-gray-700">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-accent-500 dark:bg-gray-700 dark:text-white transition-colors duration-200 outline-none"
                     placeholder="Your Name"
                   />
                 </div>
@@ -143,7 +143,7 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-accent-500 dark:bg-gray-700 dark:text-white transition-colors duration-200 outline-none"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-accent-500 dark:bg-gray-700 dark:text-white transition-colors duration-200 outline-none"
                   placeholder="Project Discussion"
                 />
               </div>
@@ -176,14 +176,14 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-accent-500 dark:bg-gray-700 dark:text-white transition-colors duration-200 resize-none outline-none"
                   placeholder="Tell me about your project or how we can collaborate..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2"
+                className="w-full bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 font-mono text-sm uppercase tracking-wide transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <Send className="w-5 h-5" />
                 Send Message

@@ -45,21 +45,24 @@ const About: React.FC = () => {
           {/* Story */}
           <div>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-              I am a graduate with a First Class B.Sc. in Computer Science from the Federal University of Petroleum
-              Resources, Effurun, where I served as the Chapter Lead for Data Science Nigeria (DSN) at FUPRE.
-              My interests and experience lie in applying data science and machine learning to real-world problems.
+              Ogboi Favour Ifeanyichukwu graduated with First Class Honours in Computer Science from the
+              Federal University of Petroleum Resources (FUPRE), where he served as Chapter Lead for Data
+              Science Nigeria (DSN). His focus has consistently been applying data science and machine
+              learning to real-world, high-stakes problems rather than isolated coursework.
             </p>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-              I have developed skills in Web development, Python programming, data analysis, and business intelligence,
-              and have applied them through freelance projects and student-led initiatives. My short-term goal is to
-              deepen my expertise through structured training.
+              That focus now shows up in production work — he currently builds perception and decision
+              systems as an AI Engineer at Aurora Robotics, while applying his background in web development,
+              data analysis, and business intelligence through freelance engagements and research
+              collaborations.
             </p>
 
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              Long-term, I aim to become a professor in my field and to build impactful AI-driven solutions across Africa.
-              When I'm not working on projects, you'll find me contributing to open-source initiatives, mentoring aspiring 
-              data scientists, or writing about the latest developments in AI and machine learning.
+              Longer term, he is working toward combining applied engineering with academic research, with
+              the goal of contributing to both industry and academia while building AI-driven solutions
+              across Africa. Alongside active projects, he mentors aspiring data scientists, contributes to
+              open-source initiatives, and writes about developments in AI and machine learning.
             </p>
           </div>
 
@@ -68,17 +71,17 @@ const About: React.FC = () => {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 hover:border-accent-500 transition-colors duration-200"
               >
                 <div className="mb-4">
-                  <item.icon className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+                  <item.icon className="w-8 h-8 text-accent-500" />
                 </div>
                 
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                   {item.title}
                 </h3>
                 
-                <h4 className="text-purple-600 dark:text-purple-400 font-medium mb-2">
+                <h4 className="font-mono text-xs uppercase tracking-wide text-accent-500 mb-2">
                   {item.subtitle}
                 </h4>
                 

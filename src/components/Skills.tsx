@@ -6,41 +6,29 @@ const Skills: React.FC = () => {
 
   const skillCategories = [
     {
-      title: 'Machine Learning & AI',
-      skills: [
-        { name: 'Python', level: 95 },
-        { name: 'TensorFlow/Keras', level: 90 },
-        { name: 'Scikit-learn', level: 92 },
-        { name: 'PyTorch', level: 85 },
-      ]
+      title: 'Languages',
+      skills: ['Python', 'SQL', 'JavaScript', 'Java', 'C++'],
     },
     {
-      title: 'Data Analysis & Visualization',
-      skills: [
-        { name: 'Pandas & NumPy', level: 95 },
-        { name: 'Matplotlib/Seaborn', level: 88 },
-        { name: 'Plotly & Dash', level: 85 },
-        { name: 'Tableau', level: 80 },
-      ]
+      title: 'ML / AI',
+      skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'XGBoost', 'SHAP', 'Ensemble Methods', 'LightGBM'],
     },
     {
-      title: 'Databases & Cloud',
-      skills: [
-        { name: 'SQL', level: 90 },
-        { name: 'MongoDB', level: 75 },
-        { name: 'AWS', level: 82 },
-        { name: 'Docker', level: 78 },
-      ]
+      title: 'Computer Vision',
+      skills: ['OpenCV', 'MediaPipe', 'SMPL / SMPL-X', 'Pose Estimation', 'CNNs', 'Segmentation'],
     },
     {
-      title: 'Statistical Analysis',
-      skills: [
-        { name: 'Statistics', level: 93 },
-        { name: 'R', level: 85 },
-        { name: 'A/B Testing', level: 88 },
-        { name: 'Time Series', level: 82 },
-      ]
-    }
+      title: 'NLP / LLMs',
+      skills: ['LangGraph', 'FAISS', 'Cohere', 'RAG', 'Transformers', 'Hugging Face'],
+    },
+    {
+      title: 'Data / MLOps',
+      skills: ['Pandas', 'NumPy', 'Docker', 'Flask', 'REST APIs', 'Streamlit', 'ETL Pipelines'],
+    },
+    {
+      title: 'BI / Analytics',
+      skills: ['Tableau', 'Power BI', 'Plotly', 'A/B Testing', 'Hypothesis Testing'],
+    },
   ];
 
   useEffect(() => {
@@ -50,7 +38,7 @@ const Skills: React.FC = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -68,42 +56,31 @@ const Skills: React.FC = () => {
             Skills & Abilities
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Comprehensive expertise across the full data science pipeline, from data collection to deployment
+            Comprehensive expertise across the full AI pipeline, from data collection to deployment
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-6">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 sm:p-8"
             >
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+              <h3 className="font-mono text-xs uppercase tracking-wide text-accent-500 mb-5">
                 {category.title}
               </h3>
-              
-              <div className="space-y-6">
+
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        {skill.name}
-                      </span>
-                      <span className="text-purple-600 dark:text-purple-400 font-semibold">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                      <div
-                        className="bg-gradient-to-r from-purple-600 to-teal-500 h-3 rounded-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: isVisible ? `${skill.level}%` : '0%',
-                          transitionDelay: `${(categoryIndex * 4 + skillIndex) * 100}ms`
-                        }}
-                      />
-                    </div>
-                  </div>
+                  <span
+                    key={skillIndex}
+                    className={`font-mono text-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600 px-3 py-1.5 transition-all duration-500 ease-out hover:border-accent-500 hover:text-accent-500 ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                    }`}
+                    style={{ transitionDelay: `${(categoryIndex * 6 + skillIndex) * 50}ms` }}
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
