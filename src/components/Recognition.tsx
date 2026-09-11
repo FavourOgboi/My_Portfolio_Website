@@ -61,25 +61,31 @@ const competitions: RecognitionItem[] = [
   },
 ];
 
-const RecognitionGrid: React.FC<{ title: string; items: RecognitionItem[] }> = ({ title, items }) => (
+const RecognitionRow: React.FC<{ title: string; items: RecognitionItem[]; reverse?: boolean }> = ({
+  title,
+  items,
+  reverse = false,
+}) => (
   <div className="mb-16 last:mb-0">
     <h3 className="font-mono text-xs uppercase tracking-wide text-accent-500 mb-6">{title}</h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {items.map((item, index) => (
-        <div
-          key={index}
-          className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-accent-500 transition-colors duration-150"
-        >
-          <img src={item.image} alt={item.event} className="w-full h-32 object-cover" />
-          <div className="p-5">
-            <div className="flex items-baseline justify-between mb-2 gap-3">
-              <h4 className="font-semibold text-gray-900 dark:text-white">{item.event}</h4>
-              <span className="font-mono text-xs text-gray-500 dark:text-gray-400 shrink-0">{item.year}</span>
+    <div className="overflow-hidden">
+      <div className={`flex gap-4 w-max ${reverse ? 'animate-scroll-recognition-reverse' : 'animate-scroll-recognition'}`}>
+        {[...items, ...items].map((item, index) => (
+          <article
+            key={`${item.event}-${index}`}
+            className="w-[320px] sm:w-[360px] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-accent-500 transition-colors duration-150 shrink-0"
+          >
+            <img src={item.image} alt={item.event} className="w-full h-40 object-cover" />
+            <div className="p-5">
+              <div className="flex items-baseline justify-between mb-2 gap-3">
+                <h4 className="font-semibold text-gray-900 dark:text-white">{item.event}</h4>
+                <span className="font-mono text-xs text-gray-500 dark:text-gray-400 shrink-0">{item.year}</span>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{item.result}</p>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{item.result}</p>
-          </div>
-        </div>
-      ))}
+          </article>
+        ))}
+      </div>
     </div>
   </div>
 );
@@ -91,8 +97,8 @@ const Recognition: React.FC = () => (
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Conferences & Recognition</h2>
       </div>
 
-      <RecognitionGrid title="Conferences & Events Attended" items={conferences} />
-      <RecognitionGrid title="Competitions & Awards" items={competitions} />
+      <RecognitionRow title="Conferences & Events Attended" items={conferences} />
+      <RecognitionRow title="Competitions & Awards" items={competitions} reverse />
     </div>
   </section>
 );

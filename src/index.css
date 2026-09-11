@@ -11,11 +11,33 @@
   }
 }
 
+@keyframes scroll-recognition {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
 .animate-scroll-certifications {
   animation: scroll-certifications 15s linear infinite;
 }
 
+.animate-scroll-recognition {
+  animation: scroll-recognition 24s linear infinite;
+}
+
+.animate-scroll-recognition-reverse {
+  animation: scroll-recognition 28s linear infinite reverse;
+}
+
 .animate-scroll-certifications:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll-recognition:hover,
+.animate-scroll-recognition-reverse:hover {
   animation-play-state: paused;
 }
 
