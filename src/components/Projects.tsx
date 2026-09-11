@@ -25,20 +25,20 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       title: 'VitalMama',
-      description: 'AI-powered maternal triage platform combining a RAG knowledge base with text-to-speech for low-connectivity clinics. Built for the Johns Hopkins / Harvard HSIL hackathon.',
+      description: 'AI-powered maternal triage platform combining a RAG knowledge base with text-to-speech for low-connectivity clinics. Built for the Johns Hopkins / Harvard HSIL hackathon, where it placed in the Top 4.',
       image: `${assetBase}vitalmama-logo.png`,
       category: 'AI Platforms',
       technologies: ['React', 'TypeScript', 'Node', 'Supabase', 'RAG', 'TTS'],
       logo: true,
-      private: { location: 'Harvard HSIL hackathon submission', reason: 'Judging is still ongoing — code is under review by organizers.' }
+      private: { location: 'GitHub — private repo', reason: 'This repository is private.' }
     },
     {
       title: 'OpsMemory',
-      description: 'AI agent platform that turns WhatsApp operational chatter into structured, searchable institutional memory. Built for a live competition submission.',
+      description: 'AI agent platform that turns WhatsApp operational chatter into structured, searchable institutional memory for operations teams that need searchable, durable context.',
       image: 'https://images.pexels.com/photos/375889/pexels-photo-375889.jpeg?auto=compress&cs=tinysrgb&w=800',
       category: 'AI Platforms',
       technologies: ['WhatsApp API', 'PostgreSQL', 'AI Agents', 'FastAPI'],
-      private: { location: 'Competition submission', reason: 'Results are still pending — repo is private until judging concludes.' }
+      private: { location: 'GitHub — private repo', reason: 'This repository is private.' }
     },
     {
       title: 'HAKI Agricultural Intelligence Platform',
