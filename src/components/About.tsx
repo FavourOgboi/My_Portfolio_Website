@@ -25,7 +25,7 @@ const About: React.FC = () => {
       icon: Lightbulb,
       title: 'Innovation Focus',
       subtitle: 'Research & Development',
-      description: 'Published research in ML applications and contributed to open-source projects'
+      description: 'Completed multiple research projects in applied ML and contributed to open-source work'
     }
   ];
 
