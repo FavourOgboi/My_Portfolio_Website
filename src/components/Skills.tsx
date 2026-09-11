@@ -32,40 +32,6 @@ const Skills: React.FC = () => {
     },
   ];
 
-  const certifications = [
-    {
-      title: 'Career Essentials in Generative AI',
-      issuer: 'Microsoft x LinkedIn',
-      year: '2025',
-    },
-    {
-      title: 'Machine Learning with Python: Zero to GBMs',
-      issuer: 'Jovian',
-      year: '2025',
-      link: 'https://jovian.com/certificate/MFQTSMJZGY',
-    },
-    {
-      title: 'Microsoft Certified: Azure Fundamentals',
-      issuer: 'Microsoft',
-      year: '2023',
-    },
-    {
-      title: 'Oracle Primavera Unifier',
-      issuer: 'Oracle',
-      year: '2024',
-    },
-    {
-      title: 'Oracle Master Data Management',
-      issuer: 'Oracle',
-      year: '2024',
-    },
-    {
-      title: 'Introduction to Power BI',
-      issuer: 'AI Planet',
-      year: '2023',
-    },
-  ];
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -102,10 +68,10 @@ const Skills: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Skills, Tools & Credentials
+            Skills & Tools
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Core capabilities grouped by focus area, with certifications kept in the same section to avoid repetition.
+            Core capabilities grouped by focus area, from model building and analytics to deployment tooling.
           </p>
         </div>
 
@@ -158,48 +124,6 @@ const Skills: React.FC = () => {
                   >
                     {skill}
                   </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex items-center justify-between gap-4 mb-5">
-              <h3 className="font-mono text-xs uppercase tracking-wide text-accent-500">
-                Selected Credentials
-              </h3>
-              <p className="font-mono text-[11px] uppercase tracking-wide text-gray-400 dark:text-gray-500">
-                Hover to pause
-              </p>
-            </div>
-
-            <div className="overflow-hidden">
-              <div className="flex gap-4 w-max animate-scroll-certifications hover:[animation-play-state:paused]">
-                {[...certifications, ...certifications].map((cert, index) => (
-                  <div
-                    key={`${cert.title}-${index}`}
-                    className="w-[280px] border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-4 shrink-0 hover:border-accent-500 transition-colors duration-200"
-                  >
-                    <div className="flex items-start justify-between gap-3 mb-2">
-                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white leading-snug">
-                        {cert.title}
-                      </h4>
-                      <span className="font-mono text-xs text-accent-500 shrink-0">{cert.year}</span>
-                    </div>
-                    <p className="font-mono text-[11px] uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-3">
-                      {cert.issuer}
-                    </p>
-                    {cert.link && (
-                      <a
-                        href={cert.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-mono text-[11px] uppercase tracking-wide text-accent-500 hover:text-accent-600"
-                      >
-                        View Certificate
-                      </a>
-                    )}
-                  </div>
                 ))}
               </div>
             </div>

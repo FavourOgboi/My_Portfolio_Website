@@ -52,12 +52,6 @@ const Technologies: React.FC = () => {
   const handleTouchEnd = () => {
     setTimeout(() => setIsPaused(false), 1000);
   };
-  const technologies = [
-    'Python', 'R', 'SQL', 'JavaScript', 'TensorFlow', 'PyTorch', 'Scikit-learn',
-    'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Plotly', 'Jupyter', 'Git',
-    'Docker', 'AWS', 'GCP', 'Tableau', 'Power BI', 'MongoDB', 'PostgreSQL',
-    'Spark', 'Hadoop', 'Kubernetes', 'MLflow', 'Airflow'
-  ];
 
   const certifications = [
     {
@@ -181,25 +175,6 @@ const Technologies: React.FC = () => {
   return (
     <section className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Technologies */}
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Technologies & Tools
-          </h2>
-          
-          <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 text-sm font-mono hover:border-accent-500 hover:text-accent-500 transition-colors duration-200 cursor-default"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Certifications */}
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
             Certifications & Credentials
