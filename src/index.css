@@ -20,6 +20,15 @@
   }
 }
 
+@keyframes skill-progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 .animate-scroll-certifications {
   animation: scroll-certifications 15s linear infinite;
 }
@@ -30,6 +39,10 @@
 
 .animate-scroll-recognition-reverse {
   animation: scroll-recognition 28s linear infinite reverse;
+}
+
+.animate-skill-progress {
+  animation: skill-progress 2.6s linear infinite;
 }
 
 .animate-scroll-certifications:hover {

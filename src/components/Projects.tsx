@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Github } from 'lucide-react';
 import PrivateLink from './PrivateLink';
 
@@ -18,6 +18,7 @@ interface Project {
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const filters = ['All', 'AI Platforms', 'NLP', 'Machine Learning', 'Data Analysis', 'Web Development', 'Research'];
 
@@ -323,9 +324,19 @@ const Projects: React.FC = () => {
     }
   ];
 
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
+  const filteredProjects = activeFilter === 'All'
+    ? projects
     : projects.filter(project => project.category === activeFilter);
+
+  const collapsedProjectCount = activeFilter === 'All' ? 6 : 6;
+  const visibleProjects = showAllProjects
+    ? filteredProjects
+    : filteredProjects.slice(0, collapsedProjectCount);
+  const hasHiddenProjects = filteredProjects.length > collapsedProjectCount;
+
+  useEffect(() => {
+    setShowAllProjects(false);
+  }, [activeFilter]);
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -358,7 +369,7 @@ const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <div
               key={index}
               className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-accent-500 transition-colors duration-200 flex flex-col"
@@ -423,6 +434,18 @@ const Projects: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {hasHiddenProjects && (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllProjects((prev) => !prev)}
+              className="border border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white px-6 py-3 font-mono text-xs uppercase tracking-wide transition-colors duration-200"
+            >
+              {showAllProjects ? 'Show Less' : `See More (${filteredProjects.length - collapsedProjectCount})`}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
